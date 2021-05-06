@@ -13,22 +13,22 @@ blueprint:
         target:
           entity:
             domain: switch
-    transition_time:
-      name: Transition
-      selector:
-        number:
-          min: 0
-          max: 180
-          step: 10
-          unit_of_measurement: sec
-          mode: slider
+#    transition_time:
+#      name: Transition
+#      selector:
+#        number:
+#          min: 0
+#          max: 180
+#          step: 10
+#          unit_of_measurement: sec
+#          mode: slider
 
 trigger:
   platform: time
   at: !input time_entity
 
 action:
-  - service: light.turn_off
+  - service: switch.turn_off
     target: !input switch_entity
-    data:
-      transition: !input transition_time
+#    data:
+#      transition: !input transition_time
